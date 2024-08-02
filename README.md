@@ -1,6 +1,6 @@
-# Frontend Mentor - Product preview card component solution
+# Frontend Mentor - Four card feature section solution
 
-This is my solution to the <a href="https://www.frontendmentor.io/learning-paths/building-responsive-layouts--z1qCXVqkD/steps/669b079685c991733471a1bd/challenge/start"> Product preview card component on Frontend Mentor</a>.<br> Frontend Mentor challenges help you improve your coding skills by building realistic projects. 
+This is my solution to the <a href="https://www.frontendmentor.io/challenges/four-card-feature-section-weK1eFYK"> Four card feature section on Frontend Mentor</a>.<br> Frontend Mentor challenges help you improve your coding skills by building realistic projects. 
 
 
 ## Overview
@@ -9,15 +9,15 @@ This is my solution to the <a href="https://www.frontendmentor.io/learning-paths
 
 <table>
   <tr>
-    <td style="width: 75%;"><img src="https://github.com/Lara-art/Recipe-page/blob/main/screenshots/Desktop.PNG" alt="Vista de Escritorio" style="width: 100%;"/></td>
-    <td style="width: 25%;"><img src="https://github.com/Lara-art/Recipe-page/blob/main/screenshots/mobile.PNG"  alt="Vista Móvil" style="width: 100%;"/></td>
+    <td style="width: 75%;"><img src="https://github.com/Lara-art/Four-Card-Feature-Section/blob/main/screenshot/Desktop.PNG" alt="Vista de Escritorio" style="width: 100%;"/></td>
+    <td style="width: 25%;"><img src="https://github.com/Lara-art/Four-Card-Feature-Section/blob/main/screenshot/Mobile.PNG"  alt="Vista Móvil" style="width: 100%;"/></td>
   </tr>
 </table>
 
 ### 🔗 Links
 
-- Solution URL: [Github](https://github.com/Lara-art/Product-preview-card-component)
-- Live Site URL: [Deployed](https://lara-art.github.io/Recipe-page/)
+- Solution URL: [Github](https://github.com/Lara-art/Four-Card-Feature-Section)
+- Live Site URL: [Deployed](https://lara-art.github.io/Four-Card-Feature-Section)
 
 ## My process
 
@@ -29,41 +29,47 @@ This is my solution to the <a href="https://www.frontendmentor.io/learning-paths
 - Base typography settings
 - Image styling
 - Use of Flexbox
+- Use of Grid
 - Mobile-first design
 
 
 ### 📚 What I learned
 
-With this exercise, I learned something I had never done before: changing the color of the list item markers.
+With this exercise I learned that the grid is a bit difficult, I couldn't do it without @media.
 
 
 ```css
-li {
-        list-style-type: inherit var(--color-Dark-Raspberry);
-    }
+.grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
 
-    & ::marker {
-        color: var(--color-Dark-Raspberry);
+@media (max-width:1000px) {
+
+    .grid {
+        grid-template-columns: 1fr;
     }
 }
 
 
 ```
-I also had to set the image to position: absolute in media, so that it wouldn't be affected by the div it was placed in.
+I couldn't get the height of .card to work without setting it directly. And as for the image position, the only way I could think of was to use position
 
 ```css
-@media screen and (min-device-width: 325px) and (max-device-width: 600px) {
 
-    .card {
-        border-radius: 0px;
-        margin: 150px auto 0px auto;
+.card {
+    padding: 2rem;
+    height: 16rem;
+    position: relative;
 
-        & img {
-            position: absolute;
-            top: 0;
-            left: 0;
-        }
+    & img {
+        margin-top: 2rem;
+        width: 80px;
+        position: absolute;
+        right: 10%;
+        bottom: 15%;
     }
+}
 ```
 
 
