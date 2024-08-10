@@ -150,9 +150,6 @@ p {
     .card {
         height: 14rem;
 
-        & img {
-            width: 70px;
-        }
 
         & p {
             font-size: 1rem;
